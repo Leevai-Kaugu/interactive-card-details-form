@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <script src="validate.js" defer></script>
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <section>
+      <div>
+        <img src="images\bg-card-front.png" alt="front card">
+      </div>
+      <div>
+        <img src="images\bg-card-back.png" alt="back card">
+      </div>
+    </section>
+  </header>
+
+
+  <main>
+    <div class="gradBg">
+      <img src="images\bg-main-mobile.png" alt="mobile background" class="mobileBg">
+      <img src="images\bg-main-desktop.png" alt="desktop bg" class="desktopBg">
+    </div>
+    <form action="validated.html" method="get" id="clientValidate" name="clientValidate" class="formed" onsubmit="return validateCreds()">
+      <div>
+        <p>CARDHOLDER NAME</p>
+        <input id="clientName" name="clientName" type="text" placeholder="e.g. Jane Appleseed" value="">
+        <span id="spnIsNameValid"></span>
+      </div>
+      <div>
+        <p>CARDHOLDER NUMBER</p>
+        <input id="cardNum" name="cardNum" type="text" placeholder="e.g. 1234 5678 9123 0000" value="">
+        <span id="spnIsNumValid"></span>
+      </div>
+      <div class="dateCvc">
+        <div class="monthStyled">
+          <p>EXP. DATE (MM/YY)</p>
+            <span>
+              <label for="month"></label>
+              <select id="month" name="month" class="month">
+              <option value="">MM</option>
+              <option value="jan">January</option>
+              <option value="feb">February</option>
+              <option value="mar">March</option>
+              <option value="apr">April</option>
+              <option value="may">May</option>
+              <option value="june">June</option>
+              <option value="july">July</option>
+              <option value="aug">August</option>
+              <option value="sept">September</option>
+              <option value="oct">October</option>
+              <option value="nov">November</option>
+              <option value="dec">December</option>
+              </select>
+            </span>
+            <span>
+              <label for="year"></label>
+              <select name="year" id="year" class="year">
+              <option value="">YY</option>
+              <option value="">2024</option>
+              <option value="">2025</option>
+              <option value="">2026</option>
+              <option value="">2027</option>
+              <option value="">2028</option>
+              </select>
+            </span>
+        </div>
+        <div class="cvcStyled">
+          <p>CVC</p>
+          <input id="CVC" name="CVC" type="number" placeholder="e.g. 123">
+          <span id="spnIsCvcValid"></span>
+        </div>
+      </div>
+      <button id="fwdBtn">Confirm</button>
+    </form>
+  </main>  
+</body>
+</html>
